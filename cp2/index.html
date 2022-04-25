@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+     Author: Olivia Addington
+     CS 132 Spring 2022
+     Date: April 24th, 2022
+     This is the index.html page for the game website I created for my creative project 2. 
+     This website implements a  popular card game called Ride the Bus, which consists of simply 
+     guessing whether a card has a Red or Black suit until you can get 5 cards correctly in a row. 
+     It includes several view pages in which the player can response to questions, and 
+     a game view page that allows them to play the game. 
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="helpers.js"></script>
+    <script defer src="bus.js"></script>
+    <title>Ride the Bus</title>
+  </head>
+  <body>
+    <header>
+      <h1>Ride the Bus</h1>
+    </header>
+    <main>
+      <article id="menu-view">
+        <h2>So you think you want to ride the Bus?</h2>
+        <div class="player-response">
+          <button id="yes-btn">Yes!</button>
+          <button id="no-btn">No, thanks.</button>
+        </div>
+      </article>
+      <article id="single-no-view" class="hidden">
+        <h2>C'mon. It'll be fun.</h2>
+        <div class="player-response">
+          <button id="fine-btn">Ok fine</button>
+          <button id="mercy-btn">Have mercy on me</button>
+        </div>
+      </article>
+      <article id="double-no-view" class="hidden">
+        <h2>What are you so afraid of ?</h2>
+        <form action="get-fear" id="fear-form">
+          <label for="player-fear"
+            ><input type="text" id="player-fear"
+          /></label>
+          <input type="submit" value="Submit" />
+        </form>
+      </article>
+      <article id="fear-revealed-view" class="hidden">
+        <h2>Afraid of</h2>
+        <h2 id="fear-revealed"></h2>
+        <h2>Interesting.</h2>
+        <div class="player-response">
+          <button id="home-btn">Take me home</button>
+        </div>
+      </article>
+      <article id="game-view" class="hidden">
+        <h2>Welcome aboard</h2>
+        <section id="board"></section>
+        <div class="player-response">
+          <button id="smoke-guess">Smoke</button>
+          <button id="fire-guess">Fire</button>
+          <button id="replay-btn" class="hidden">One more time</button>
+          <button id="forfeit-btn" class="hidden">
+            Get me off this thing !
+          </button>
+        </div>
+      </article>
+    </main>
+    <footer></footer>
+  </body>
+</html>
